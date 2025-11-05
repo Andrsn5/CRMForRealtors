@@ -1,0 +1,8 @@
+
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(÷çùüÿÿÿÿ8—®Ÿ¬¥3
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¡áËÖıÿÿÿÿ8˜®Ÿ¬¥3
+W
+java:S1118
+":Add a private constructor to hide the implicit public one.(¼ÚŠ8¬®Ÿ¬¥3
+O
+java:S4925"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ8¿®Ÿ¬¥3

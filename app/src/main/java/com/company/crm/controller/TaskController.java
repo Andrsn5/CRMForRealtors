@@ -75,6 +75,7 @@ public class TaskController {
             task.setDueDate(dueDate);
             task.setResponsibleId(Integer.parseInt(ConsoleHelper.ask("Responsible Employee ID")));
             task.setClientId(Integer.parseInt(ConsoleHelper.ask("Client ID")));
+            task.setObjectId(Integer.parseInt(ConsoleHelper.ask("Object ID")));
         } catch (Exception e) {
             System.out.println("❌ Invalid date or number format");
             return;
