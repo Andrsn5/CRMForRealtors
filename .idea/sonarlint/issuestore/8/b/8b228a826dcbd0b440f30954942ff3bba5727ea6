@@ -1,11 +1,97 @@
 
-F	java:S106&"+Replace this use of System.out by a logger.(¹¥”w8Õ’¥¥3
-L	java:S106'"+Replace this use of System.out by a logger.(–•à²ýÿÿÿÿ8Õ’¥¥3
-G	java:S106/"+Replace this use of System.out by a logger.(¨²¾å8Õ’¥¥3
-L	java:S1067"+Replace this use of System.out by a logger.(¬™ÿ³ûÿÿÿÿ8Õ’¥¥3
-G	java:S1069"+Replace this use of System.out by a logger.(ˆÁÓÅ8Õ’¥¥3
-G	java:S106O"+Replace this use of System.out by a logger.(âÅìÞ8à’¥¥3
-L	java:S106T"+Replace this use of System.out by a logger.(î˜éµþÿÿÿÿ8á’¥¥3
-F	java:S106^"+Replace this use of System.out by a logger.(è‰Æ8â’¥¥3
-G	java:S106_"+Replace this use of System.out by a logger.(¼©ó‹8â’¥¥3
-L	java:S106f"+Replace this use of System.out by a logger.(·­ê¡øÿÿÿÿ8ã’¥¥3
+†
+java:S1192´"hDefine a constant instead of duplicating this literal "Please correct the data and try again.
+" 3 times.(ý· 8½¢øý¥3
+o
+java:S1192¶"QDefine a constant instead of duplicating this literal "Try again? (y/n)" 6 times.(žžŽ†8½¢øý¥3
+d
+java:S1192."GDefine a constant instead of duplicating this literal "Medium" 3 times.(¢òÑ†8½¢øý¥3
+u
+java:S1192³"WDefine a constant instead of duplicating this literal "âŒ Validation error: " 3 times.(Ó¾8½¢øý¥3
+j
+java:S1192»"LDefine a constant instead of duplicating this literal "âŒ Error: " 3 times.(Ë‚›Ù8½¢øý¥3
+j
+java:S11923"HDefine a constant instead of duplicating this literal "Pending" 3 times.(›¿ŸÏüÿÿÿÿ8½¢øý¥3
+z	java:S135R"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆžÿÿÿÿÿ8½¢øý¥3
+{	java:S135È"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆžÿÿÿÿÿ8½¢øý¥3
+{	java:S135µ"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆžÿÿÿÿÿ8½¢øý¥3
+W
+java:S1141j"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8½¢øý¥3
+W
+java:S1141u"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8½¢øý¥3
+W
+java:S1141{"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8½¢øý¥3
+X
+java:S1141†"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8½¢øý¥3
+X
+java:S1141Ž"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8½¢øý¥3
+X
+java:S1141–"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8½¢øý¥3
+X
+java:S1141ž"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8½¢øý¥3
+X
+java:S1141¦"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8½¢øý¥3
+X
+java:S1141æ"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8½¢øý¥3
+c
+java:S2184ñ"@Cast one of the operands of this addition operation to a "long".(Ç¿¹ÿúÿÿÿÿ8½¢øý¥3
+G	java:S106'"+Replace this use of System.out by a logger.(ÑŒË‹8â¥øý¥3
+F	java:S1069"+Replace this use of System.out by a logger.(¹¥”w8â¥øý¥3
+L	java:S106:"+Replace this use of System.out by a logger.(–•à²ýÿÿÿÿ8â¥øý¥3
+G	java:S106B"+Replace this use of System.out by a logger.(¨²¾å8â¥øý¥3
+L	java:S106J"+Replace this use of System.out by a logger.(¬™ÿ³ûÿÿÿÿ8â¥øý¥3
+L	java:S106L"+Replace this use of System.out by a logger.(ûš·Þúÿÿÿÿ8â¥øý¥3
+G	java:S106M"+Replace this use of System.out by a logger.(ˆÁÓÅ8â¥øý¥3
+o
+java:S3776Q"RRefactor this method to reduce its Cognitive Complexity from 48 to the 15 allowed.(â–õ8â¥øý¥3
+L	java:S106T"+Replace this use of System.out by a logger.(æÅó÷ÿÿÿÿÿ8ò¥øý¥3
+M	java:S106¯"+Replace this use of System.out by a logger.(î˜éµþÿÿÿÿ8ò¥øý¥3
+H	java:S106³"+Replace this use of System.out by a logger.(Ó¾8‚¦øý¥3
+H	java:S106´"+Replace this use of System.out by a logger.(ý· 8‚¦øý¥3
+H	java:S106»"+Replace this use of System.out by a logger.(Ë‚›Ù8‚¦øý¥3
+H	java:S106¼"+Replace this use of System.out by a logger.(Öà¸8‚¦øý¥3
+u
+java:S3776Ç"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(çÈ«ðÿÿÿÿÿ8‚¦øý¥3
+M	java:S106Ê"+Replace this use of System.out by a logger.(Ï¶Êþÿÿÿÿ8‚¦øý¥3
+M	java:S106Ï"+Replace this use of System.out by a logger.(¤öì»þÿÿÿÿ8‚¦øý¥3
+M	java:S106Ù"+Replace this use of System.out by a logger.(Á“þËþÿÿÿÿ8“¦øý¥3
+`
+java:S1612ô"CReplace this lambda with method reference 'task::setResponsibleId'.(ÌŽ¥e8¢¦øý¥3
+b
+java:S1612ö"?Replace this lambda with method reference 'task::setCreatorId'.(ûÝ®Œøÿÿÿÿ8¢¦øý¥3
+\
+java:S1612ø">Replace this lambda with method reference 'task::setClientId'.(£ï­ì8¢¦øý¥3
+\
+java:S1612ú">Replace this lambda with method reference 'task::setObjectId'.(ºË¦É8¢¦øý¥3
+_
+java:S1612ü"AReplace this lambda with method reference 'task::setConditionId'.(ŠïõÊ8¢¦øý¥3
+_
+java:S1612þ"<Replace this lambda with method reference 'task::setDealId'.(áë¨§ûÿÿÿÿ8¢¦øý¥3
+]
+java:S1612€"?Replace this lambda with method reference 'task::setMeetingId'.(ûƒ±ê8¢¦øý¥3
+G	java:S106ƒ"+Replace this use of System.out by a logger.(è‰Æ8¢¦øý¥3
+H	java:S106‡"+Replace this use of System.out by a logger.(Ó¾8¢¦øý¥3
+H	java:S106ˆ"+Replace this use of System.out by a logger.(ý· 8¢¦øý¥3
+H	java:S106"+Replace this use of System.out by a logger.(Ë‚›Ù8¢¦øý¥3
+I
+java:S1172š"+Remove this unused method parameter "task".(ÝÐÝÕ8²¦øý¥3
+o
+java:S4276š"QRefactor this code to use the more specialised Functional Interface 'IntConsumer'(ÝÐÝÕ8²¦øý¥3
+I
+java:S1172¥"+Remove this unused method parameter "task".(¢§Í³8²¦øý¥3
+o
+java:S4276¥"QRefactor this code to use the more specialised Functional Interface 'IntConsumer'(¢§Í³8Â¦øý¥3
+p
+java:S3776´"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Ëý‘‡8Â¦øý¥3
+M	java:S106·"+Replace this use of System.out by a logger.(þ¥ìûùÿÿÿÿ8Â¦øý¥3
+M	java:S106½"+Replace this use of System.out by a logger.(¤öì»þÿÿÿÿ8Â¦øý¥3
+H	java:S106Ç"+Replace this use of System.out by a logger.(‚‰çâ8Â¦øý¥3
+H	java:S106Ì"+Replace this use of System.out by a logger.(Ûô×§8Â¦øý¥3
+M	java:S106Î"+Replace this use of System.out by a logger.(ùÈþÄþÿÿÿÿ8Â¦øý¥3
+H	java:S106Ó"+Replace this use of System.out by a logger.(Ó¾8Â¦øý¥3
+H	java:S106Ô"+Replace this use of System.out by a logger.(ý· 8Â¦øý¥3
+H	java:S106Û"+Replace this use of System.out by a logger.(Ë‚›Ù8Â¦øý¥3
+M	java:S106û"+Replace this use of System.out by a logger.(‹öôóûÿÿÿÿ8Ñ¦øý¥3
+G	java:S106ý"+Replace this use of System.out by a logger.(Äã¸G8Ñ¦øý¥3
+ä
+java:S6541Q"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 101 to 64, Complexity from 17 to 14, Nesting Level from 4 to 2, Number of Variables from 29 to 6.(â–õ8Ñ¦øý¥3

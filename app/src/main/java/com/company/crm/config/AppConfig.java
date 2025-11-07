@@ -1,41 +1,116 @@
 package com.company.crm.config;
+
 import com.company.crm.dao.inmemory.*;
 import com.company.crm.service.implement.*;
 import com.company.crm.service.interfaces.*;
 import com.company.crm.controller.*;
 
 public class AppConfig {
+    // DAO instances
     private final EmployeeDaoInMemory employeeDao = new EmployeeDaoInMemory();
+    private final ClientDaoInMemory clientDao = new ClientDaoInMemory();
+    private final ObjectDaoInMemory objectDao = new ObjectDaoInMemory();
+    private final TaskDaoInMemory taskDao = new TaskDaoInMemory();
+    private final DealDaoInMemory dealDao = new DealDaoInMemory();
+    private final MeetingDaoInMemory meetingDao = new MeetingDaoInMemory();
+    private final PhotoDaoInMemory photoDao = new PhotoDaoInMemory();
+    private final AdditionalConditionDaoInMemory additionalConditionDao = new AdditionalConditionDaoInMemory();
+
+    // Service instances
     private final EmployeeService employeeService = new EmployeeServiceImpl(employeeDao);
-    private final EmployeeController employeeController = new EmployeeController(employeeService);
-    private final ClientDaoInMemory ClientDao = new ClientDaoInMemory();
-    private final ClientService ClientService = new ClientServiceImpl(ClientDao);
-    private final ClientController ClientController = new ClientController(ClientService);
-    private final TaskDaoInMemory TaskDao = new TaskDaoInMemory();
-    private final TaskService TaskService = new TaskServiceImpl(TaskDao);
-    private final TaskController TaskController = new TaskController(TaskService);
-    private final ObjectDaoInMemory ObjectDao = new ObjectDaoInMemory();
-    private final ObjectService ObjectService = new ObjectServiceImpl(ObjectDao);
-    private final ObjectController ObjectController = new ObjectController(ObjectService);
-    private final PhotoDaoInMemory PhotoDao = new PhotoDaoInMemory();
-    private final PhotoService PhotoService = new PhotoServiceImpl(PhotoDao);
-    private final PhotoController PhotoController = new PhotoController(PhotoService);
-    private final MeetingDaoInMemory MeetingDao = new MeetingDaoInMemory();
-    private final MeetingService MeetingService = new MeetingServiceImpl(MeetingDao);
-    private final MeetingController MeetingController = new MeetingController(MeetingService);
-    private final DealDaoInMemory DealDao = new DealDaoInMemory();
-    private final DealService DealService = new DealServiceImpl(DealDao);
-    private final DealController DealController = new DealController(DealService);
-    private final AdditionalConditionDaoInMemory AdditionalConditionDao = new AdditionalConditionDaoInMemory();
-    private final AdditionalConditionService AdditionalConditionService = new AdditionalConditionServiceImpl(AdditionalConditionDao);
-    private final AdditionalConditionController AdditionalConditionController = new AdditionalConditionController(AdditionalConditionService);
+    private final ClientService clientService = new ClientServiceImpl(clientDao);
+    private final ObjectService objectService = new ObjectServiceImpl(objectDao);
+    private final TaskService taskService = new TaskServiceImpl(taskDao, employeeDao, clientDao, objectDao,additionalConditionDao,dealDao,meetingDao);
+    private final DealService dealService = new DealServiceImpl(dealDao, taskDao);
+    private final MeetingService meetingService = new MeetingServiceImpl(meetingDao, clientDao, taskDao);
+    private final PhotoService photoService = new PhotoServiceImpl(photoDao, objectDao);
+    private final AdditionalConditionService additionalConditionService = new AdditionalConditionServiceImpl(additionalConditionDao);
 
+    // Controller instances
+    private final EmployeeController employeeController;
+    private final ClientController clientController;
+    private final TaskController taskController;
+    private final ObjectController objectController;
+    private final PhotoController photoController;
+    private final MeetingController meetingController;
+    private final DealController dealController;
+    private final AdditionalConditionController additionalConditionController;
 
-    private final ConsoleApp consoleApp ;
+    private final ConsoleApp consoleApp;
+
     public AppConfig() {
 
-        this.consoleApp = new ConsoleApp(employeeController, ClientController,DealController,MeetingController,ObjectController,PhotoController,AdditionalConditionController,TaskController);
+        this.employeeController = new EmployeeController(employeeService);
+        this.clientController = new ClientController(clientService);
+        this.taskController = new TaskController(taskService);
+        this.objectController = new ObjectController(objectService);
+        this.photoController = new PhotoController(photoService);
+        this.meetingController = new MeetingController(meetingService);
+        this.dealController = new DealController(dealService);
+        this.additionalConditionController = new AdditionalConditionController(additionalConditionService);
+
+        this.consoleApp = new ConsoleApp(
+                employeeController,
+                clientController,
+                dealController,
+                meetingController,
+                objectController,
+                photoController,
+                additionalConditionController,
+                taskController
+        );
+
+
+        initializeSeedData();
     }
 
+
+    private void initializeSeedData() {
+        try {
+            // Проверяем, не в тестовом ли мы окружении
+            if (!isTestEnvironment()) {
+                employeeController.seedData();
+                clientController.seedData();
+                objectController.seedData();
+                taskController.seedData();
+                photoController.seedData();
+                meetingController.seedData();
+                dealController.seedData();
+                additionalConditionController.seedData();
+            }
+        } catch (Exception e) {
+
+            System.out.println("Seed data initialization skipped: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Проверяем, работает ли приложение в тестовом окружении
+     */
+    private boolean isTestEnvironment() {
+        return java.lang.management.ManagementFactory.getRuntimeMXBean()
+                .getInputArguments()
+                .toString()
+                .contains("junit");
+    }
+
+    // Getters for all components
     public ConsoleApp getConsoleApp() { return consoleApp; }
+    public EmployeeService getEmployeeService() { return employeeService; }
+    public ClientService getClientService() { return clientService; }
+    public TaskService getTaskService() { return taskService; }
+    public ObjectService getObjectService() { return objectService; }
+    public PhotoService getPhotoService() { return photoService; }
+    public MeetingService getMeetingService() { return meetingService; }
+    public DealService getDealService() { return dealService; }
+    public AdditionalConditionService getAdditionalConditionService() { return additionalConditionService; }
+
+    public EmployeeController getEmployeeController() { return employeeController; }
+    public ClientController getClientController() { return clientController; }
+    public TaskController getTaskController() { return taskController; }
+    public ObjectController getObjectController() { return objectController; }
+    public PhotoController getPhotoController() { return photoController; }
+    public MeetingController getMeetingController() { return meetingController; }
+    public DealController getDealController() { return dealController; }
+    public AdditionalConditionController getAdditionalConditionController() { return additionalConditionController; }
 }

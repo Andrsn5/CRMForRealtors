@@ -1,22 +1,2 @@
 
-u	java:S116"TRename this field "ClientDao" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ö°ğƒÿÿÿÿÿ8Î“«Ûœ3
-t	java:S116"XRename this field "ClientService" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Š¢ÅÕ8Ş“«Ûœ3
-w	java:S116"[Rename this field "ClientController" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’„“€8Ş“«Ûœ3
-s	java:S116"RRename this field "TaskDao" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿóƒ‘ÿÿÿÿÿ8Ş“«Ûœ3
-w	java:S116"VRename this field "TaskService" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÉÇˆüÿÿÿÿ8Ş“«Ûœ3
-u	java:S116"YRename this field "TaskController" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨ÛÛí8Ş“«Ûœ3
-p	java:S116"TRename this field "ObjectDao" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€èùë8Ş“«Ûœ3
-t	java:S116"XRename this field "ObjectService" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôéİî8Ş“«Ûœ3
-w	java:S116"[Rename this field "ObjectController" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä©“8Ş“«Ûœ3
-o	java:S116"SRename this field "PhotoDao" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öÑå8Ş“«Ûœ3
-s	java:S116"WRename this field "PhotoService" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ¦¸­8Ş“«Ûœ3
-v	java:S116"ZRename this field "PhotoController" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äÈğÜ8Ş“«Ûœ3
-q	java:S116"URename this field "MeetingDao" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õ×¬‹8Ş“«Ûœ3
-u	java:S116"YRename this field "MeetingService" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™ÖãÍ8Ş“«Ûœ3
-x	java:S116"\Rename this field "MeetingController" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûÍòÁ8Ş“«Ûœ3
-s	java:S116"RRename this field "DealDao" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( §¯šüÿÿÿÿ8Ş“«Ûœ3
-r	java:S116"VRename this field "DealService" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Úğ‚ë8Ş“«Ûœ3
-z	java:S116"YRename this field "DealController" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ·Èşÿÿÿÿ8Ş“«Ûœ3
-}	java:S116"aRename this field "AdditionalConditionDao" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ĞšÕ8Ş“«Ûœ3
-†	java:S116"eRename this field "AdditionalConditionService" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é£´úÿÿÿÿ8Ş“«Ûœ3
-„	java:S116"hRename this field "AdditionalConditionController" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éÖâº8Ş“«Ûœ3
+G	java:S106S"+Replace this use of System.out by a logger.(Âãóà8â¾„ş¥3

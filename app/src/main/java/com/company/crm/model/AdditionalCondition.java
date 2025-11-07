@@ -8,7 +8,7 @@ public class AdditionalCondition {
     private LocalDate deadline;
     private boolean required = false;
     private String status = "активно";
-    private String priority = "средний";
+    private String priority = "medium";
     private String notes;
 
     public String getConditionType() {
@@ -76,7 +76,7 @@ public class AdditionalCondition {
     }
     @Override
     public String toString() {
-        return String.format("AdditionalCondition{id=%d, type='%s', description='%s', deadline=%s, required=%s, status='%s', priority='%s'}",
-                id, conditionType, description, deadline, required, status, priority);
+        return String.format("AdditionalCondition{id=%d, type='%s', description='%s', deadline=%s, required=%s, status='%s', priority='%s' , notes='%s'}",
+                id, conditionType, description, deadline, required, status, priority,notes );
     }
 }

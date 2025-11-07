@@ -1,11 +1,61 @@
 
-G	java:S106$"+Replace this use of System.out by a logger.(Á¹‰’8¥ö¥¥3
-L	java:S106%"+Replace this use of System.out by a logger.(–•à²ıÿÿÿÿ8¥ö¥¥3
-G	java:S106-"+Replace this use of System.out by a logger.(¨²¾å8¥ö¥¥3
-G	java:S1065"+Replace this use of System.out by a logger.(‹‰•8´ö¥¥3
-G	java:S1067"+Replace this use of System.out by a logger.(ˆÁÓÅ8´ö¥¥3
-L	java:S106I"+Replace this use of System.out by a logger.(³æÉ…üÿÿÿÿ8´ö¥¥3
-G	java:S106P"+Replace this use of System.out by a logger.(«Í°¦8´ö¥¥3
-G	java:S106Z"+Replace this use of System.out by a logger.(æ”8´ö¥¥3
-G	java:S106["+Replace this use of System.out by a logger.(ß‰ºÏ8´ö¥¥3
-L	java:S106b"+Replace this use of System.out by a logger.(Â§îÅÿÿÿÿÿ8´ö¥¥3
+…
+java:S1192l"hDefine a constant instead of duplicating this literal "Please correct the data and try again.
+" 3 times.(ı· 8ŞÕ¯û¥3
+n
+java:S1192n"QDefine a constant instead of duplicating this literal "Try again? (y/n)" 6 times.(†8ŞÕ¯û¥3
+t
+java:S1192k"WDefine a constant instead of duplicating this literal "âŒ Validation error: " 3 times.(Ó¾8ŞÕ¯û¥3
+z	java:S135B"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ8ŞÕ¯û¥3
+{	java:S135€"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ8ŞÕ¯û¥3
+{	java:S135Ù"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ8ŞÕ¯û¥3
+W
+java:S1141Q"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ŞÕ¯û¥3
+W
+java:S1141_"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ŞÕ¯û¥3
+X
+java:S1141™"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ŞÕ¯û¥3
+X
+java:S1141£"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ŞÕ¯û¥3
+X
+java:S1141­"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ŞÕ¯û¥3
+X
+java:S1141·"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ŞÕ¯û¥3
+`
+java:S3358"DExtract this nested ternary operation into an independent statement.(†˜®<8æÚ¯û¥3
+G	java:S106!"+Replace this use of System.out by a logger.(ÑŒË‹8öÚ¯û¥3
+G	java:S106)"+Replace this use of System.out by a logger.(Á¹‰’8…Û¯û¥3
+L	java:S106*"+Replace this use of System.out by a logger.(–•à²ıÿÿÿÿ8–Û¯û¥3
+G	java:S1062"+Replace this use of System.out by a logger.(¨²¾å8–Û¯û¥3
+G	java:S106:"+Replace this use of System.out by a logger.(‹‰•8–Û¯û¥3
+L	java:S106<"+Replace this use of System.out by a logger.(Ëªª•øÿÿÿÿ8–Û¯û¥3
+G	java:S106="+Replace this use of System.out by a logger.(ˆÁÓÅ8–Û¯û¥3
+o
+java:S3776A"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(â–õ8–Û¯û¥3
+L	java:S106D"+Replace this use of System.out by a logger.(ƒÍõ×úÿÿÿÿ8–Û¯û¥3
+L	java:S106g"+Replace this use of System.out by a logger.(³¯‘áüÿÿÿÿ8¥Û¯û¥3
+G	java:S106k"+Replace this use of System.out by a logger.(Ó¾8µÛ¯û¥3
+G	java:S106l"+Replace this use of System.out by a logger.(ı· 8µÛ¯û¥3
+G	java:S106s"+Replace this use of System.out by a logger.(øÔÍâ8µÛ¯û¥3
+L	java:S106t"+Replace this use of System.out by a logger.(±†µıÿÿÿÿ8ÅÛ¯û¥3
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(çÈ«ğÿÿÿÿÿ8ÕŞ¯û¥3
+M	java:S106‚"+Replace this use of System.out by a logger.(Ï³Ì‚üÿÿÿÿ8äŞ¯û¥3
+H	java:S106‡"+Replace this use of System.out by a logger.(ß©­…8ñŞ¯û¥3
+M	java:S106‘"+Replace this use of System.out by a logger.(îá—úÿÿÿÿ8òŞ¯û¥3
+H	java:S106Á"+Replace this use of System.out by a logger.(æ”8òŞ¯û¥3
+H	java:S106Å"+Replace this use of System.out by a logger.(Ó¾8òŞ¯û¥3
+H	java:S106Æ"+Replace this use of System.out by a logger.(ı· 8òŞ¯û¥3
+H	java:S106Í"+Replace this use of System.out by a logger.(Ë‚›Ù8òŞ¯û¥3
+p
+java:S3776Ø"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Ëı‘‡8òŞ¯û¥3
+M	java:S106Û"+Replace this use of System.out by a logger.(Ì»äÄşÿÿÿÿ8òŞ¯û¥3
+H	java:S106á"+Replace this use of System.out by a logger.(ß©­…8òŞ¯û¥3
+M	java:S106ë"+Replace this use of System.out by a logger.(íÈî¨úÿÿÿÿ8òŞ¯û¥3
+H	java:S106ğ"+Replace this use of System.out by a logger.(£°ÃÈ8òŞ¯û¥3
+M	java:S106ò"+Replace this use of System.out by a logger.(ùÈşÄşÿÿÿÿ8‚ß¯û¥3
+H	java:S106÷"+Replace this use of System.out by a logger.(Ó¾8‚ß¯û¥3
+H	java:S106ø"+Replace this use of System.out by a logger.(ı· 8‚ß¯û¥3
+H	java:S106ÿ"+Replace this use of System.out by a logger.(Ë‚›Ù8‚ß¯û¥3
+H	java:S106¨"+Replace this use of System.out by a logger.(–€‹Ÿ8†ß¯û¥3
+G	java:S106ª"+Replace this use of System.out by a logger.(Äã¸G8†ß¯û¥3
