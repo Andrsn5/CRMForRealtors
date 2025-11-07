@@ -1,20 +1,21 @@
 package com.company.crm.config;
 
 import com.company.crm.dao.inmemory.*;
+import com.company.crm.dao.jdbc.*;
 import com.company.crm.service.implement.*;
 import com.company.crm.service.interfaces.*;
 import com.company.crm.controller.*;
 
 public class AppConfig {
     // DAO instances
-    private final EmployeeDaoInMemory employeeDao = new EmployeeDaoInMemory();
-    private final ClientDaoInMemory clientDao = new ClientDaoInMemory();
-    private final ObjectDaoInMemory objectDao = new ObjectDaoInMemory();
-    private final TaskDaoInMemory taskDao = new TaskDaoInMemory();
-    private final DealDaoInMemory dealDao = new DealDaoInMemory();
-    private final MeetingDaoInMemory meetingDao = new MeetingDaoInMemory();
-    private final PhotoDaoInMemory photoDao = new PhotoDaoInMemory();
-    private final AdditionalConditionDaoInMemory additionalConditionDao = new AdditionalConditionDaoInMemory();
+    private final EmployeeDaoJdbcImpl employeeDao = new EmployeeDaoJdbcImpl();
+    private final ClientDaoJdbcImpl clientDao = new ClientDaoJdbcImpl();
+    private final ObjectDaoJdbcImpl objectDao = new ObjectDaoJdbcImpl();
+    private final TaskDaoJdbcImpl taskDao = new TaskDaoJdbcImpl();
+    private final DealDaoJdbcImpl dealDao = new DealDaoJdbcImpl();
+    private final MeetingDaoJdbcImpl meetingDao = new MeetingDaoJdbcImpl();
+    private final PhotoDaoJdbcImpl photoDao = new PhotoDaoJdbcImpl();
+    private final AdditionalConditionDaoJdbcImpl additionalConditionDao = new AdditionalConditionDaoJdbcImpl();
 
     // Service instances
     private final EmployeeService employeeService = new EmployeeServiceImpl(employeeDao);

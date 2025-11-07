@@ -127,3 +127,11 @@ i
 9app/src/main/java/com/company/crm/dao/TestConnection.java,6\c\6c2b59b98ffe6a9ff4b6f150651ad2da89b135b2
 q
 Aapp/src/main/java/com/company/crm/dao/jdbc/ConnectionFactory.java,3\2\3260514f6b087b885827750f0633a163b3c3c450
+I
+gradle/libs.versions.toml,d\7\d7595319a0658be6f1ed500ad590d42e4b28bc4f
+C
+settings.gradle.kts,7\4\749edfcc96398253e5b3416184e95c46621da850
+~
+Napp/src/main/java/com/company/crm/dao/jdbc/AdditionalConditionDaoJdbcImpl.java,3\f\3f741b899aedbd9054972f6b155c2640259e7f6c
+q
+Aapp/src/main/java/com/company/crm/dao/jdbc/ClientDaoJdbcImpl.java,b\9\b94a65b567122d17b2e923e2fe35db99be71de8f

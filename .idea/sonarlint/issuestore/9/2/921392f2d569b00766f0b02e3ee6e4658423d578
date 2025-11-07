@@ -1,2 +1,4 @@
 
-G	java:S106S"+Replace this use of System.out by a logger.(┬уєр8т╛Д■е3
+G	java:S106T"+Replace this use of System.out by a logger.(┬уєр8т╛Д■е3
+U
+java:S1128"9Remove this unused import 'com.company.crm.dao.inmemory'.(╛║Ьy8к╫╙Дж3
