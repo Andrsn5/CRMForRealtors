@@ -50,7 +50,7 @@ public class ObjectController {
     }
 
     private String getStatus(int i) {
-        String[] statuses = {"Available", "Sold", "Rented", "Under Contract", "Reserved"};
+        String[] statuses = {"Available", "Sold", "Rented", "Draft", "Reserved"};
         return statuses[i % statuses.length];
     }
 
@@ -93,7 +93,7 @@ public class ObjectController {
                 String areaStr = ConsoleHelper.ask("Area (sqm)");
                 String roomsStr = ConsoleHelper.ask("Rooms");
                 String bathroomsStr = ConsoleHelper.ask("Bathrooms");
-                String status = ConsoleHelper.ask("Status (Available/Sold/Rented/Under Contract/Reserved)");
+                String status = ConsoleHelper.ask("Status (Available/Sold/Rented/Draft/Reserved)");
 
                 Object obj = new Object();
                 obj.setTitle(title);

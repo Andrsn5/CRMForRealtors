@@ -6,6 +6,12 @@
     <title><c:if test="${empty photo}">Новая</c:if><c:if test="${!empty photo}">Редактировать</c:if> фотография</title>
 </head>
 <body>
+<%-- Отображение ошибок --%>
+<c:if test="${not empty error}">
+    <div style="color: red; margin-bottom: 10px; padding: 10px; border: 1px solid red;">
+        <strong>Ошибка:</strong> ${error}
+    </div>
+</c:if>
 <h2><c:if test="${empty photo}">Новая</c:if><c:if test="${!empty photo}">Редактировать</c:if> фотография</h2>
 <form method="post" action="photo">
     <input type="hidden" name="id" value="${photo.id}" />
@@ -16,5 +22,6 @@
     <button type="submit">Сохранить</button>
 </form>
 <a href="photo?action=list">Назад к списку</a>
+<a href="index.jsp">На главную</a>
 </body>
 </html>

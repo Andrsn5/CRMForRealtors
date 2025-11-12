@@ -20,5 +20,6 @@
 <br/>
 <a href="additionalCondition?action=edit&id=${condition.id}">Редактировать</a> |
 <a href="additionalCondition?action=list">Назад к списку</a>
+<a href="index.jsp">На главную</a>
 </body>
 </html>

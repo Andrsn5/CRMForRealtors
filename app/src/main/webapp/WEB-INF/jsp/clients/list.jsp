@@ -8,6 +8,7 @@
 <body>
 <h2>Список клиентов</h2>
 <a href="client?action=new">Добавить клиента</a>
+<a href="index.jsp">На главную</a>
 <table border="1">
 <tr><th>ID</th><th>Имя</th><th>Фамилия</th><th>Email</th><th>Телефон</th><th>Тип</th><th>Действия</th></tr>
 <c:forEach var="client" items="${clients}">

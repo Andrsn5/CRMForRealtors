@@ -23,5 +23,6 @@
 <br/>
 <a href="object?action=edit&id=${object.id}">Редактировать</a> |
 <a href="object?action=list">Назад к списку</a>
+<a href="index.jsp">На главную</a>
 </body>
 </html>

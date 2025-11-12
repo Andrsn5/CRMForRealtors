@@ -1,14 +1,19 @@
 package com.company.crm.service.implement;
 
 import com.company.crm.dao.interfaces.*;
+import com.company.crm.model.EmployeeStats;
 import com.company.crm.model.Task;
 import com.company.crm.service.interfaces.TaskService;
 import com.company.crm.util.ValidationException;
 import com.company.crm.util.ValidationUtils;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class TaskServiceImpl implements TaskService {
     private final TaskDao dao;
@@ -79,6 +84,7 @@ public class TaskServiceImpl implements TaskService {
         ValidationUtils.validateRequired(task.getCreatorId(), "Creator employee");
 
         ValidationUtils.validateMaxLength(task.getTitle(), 255, "Title");
+        ValidationUtils.validateMaxLength(task.getDescription(), 1000, "Description");
         ValidationUtils.validateMaxLength(task.getPriority(), 50, "Priority");
         ValidationUtils.validateMaxLength(task.getStatus(), 50, "Status");
 
@@ -135,20 +141,20 @@ public class TaskServiceImpl implements TaskService {
                     .orElseThrow(() -> new ValidationException("Object not found with ID: " + task.getObjectId()));
         }
 
-        // Проверка существования дополнительного условия (если указано)
-        if (task.getConditionId() != null) {
+        // Проверка существования дополнительного условия (если указано и ID > 0)
+        if (task.getConditionId() != null && task.getConditionId() > 0) {
             conditionDao.findById(task.getConditionId())
                     .orElseThrow(() -> new ValidationException("Additional condition not found with ID: " + task.getConditionId()));
         }
 
-        // Проверка существования сделки (если указана)
-        if (task.getDealId() != null) {
+        // Проверка существования сделки (если указана и ID > 0)
+        if (task.getDealId() != null && task.getDealId() > 0) {
             dealDao.findById(task.getDealId())
                     .orElseThrow(() -> new ValidationException("Deal not found with ID: " + task.getDealId()));
         }
 
-        // Проверка существования встречи (если указана)
-        if (task.getMeetingId() != null) {
+        // Проверка существования встречи (если указана и ID > 0)
+        if (task.getMeetingId() != null && task.getMeetingId() > 0) {
             meetingDao.findById(task.getMeetingId())
                     .orElseThrow(() -> new ValidationException("Meeting not found with ID: " + task.getMeetingId()));
         }
@@ -179,7 +185,7 @@ public class TaskServiceImpl implements TaskService {
             throw new ValidationException("Status is required");
         }
 
-        String[] validStatuses = {"Pending", "In Progress", "Completed", "Cancelled", "On Hold"};
+        String[] validStatuses = {"In Progress", "Completed", "Cancelled", "On Hold"};
 
         boolean isValid = false;
         for (String validStatus : validStatuses) {
@@ -190,7 +196,7 @@ public class TaskServiceImpl implements TaskService {
         }
 
         if (!isValid) {
-            throw new ValidationException("Invalid status. Allowed values: Pending, In Progress, Completed, Cancelled, On Hold");
+            throw new ValidationException("Invalid status. Allowed values: In Progress, Completed, Cancelled, On Hold");
         }
     }
 
@@ -279,5 +285,88 @@ public class TaskServiceImpl implements TaskService {
                                 " is already used in task (ID: " + existingTask.getId() + ")");
                     });
         }
+    }
+
+    // Новый метод для парсинга даты и времени из строки
+    public LocalDateTime parseDateTime(String dateTimeString) {
+        if (dateTimeString == null || dateTimeString.trim().isEmpty()) {
+            return null;
+        }
+
+        try {
+            // Пробуем разные форматы даты и времени
+            if (dateTimeString.contains("T")) {
+                // HTML5 datetime-local format: "2024-11-18T15:30"
+                if (dateTimeString.length() == 16) {
+                    return LocalDateTime.parse(dateTimeString + ":00");
+                }
+                return LocalDateTime.parse(dateTimeString);
+            } else if (dateTimeString.contains(" ")) {
+                // Формат с временем: "2024-11-18 15:30:00" или "2024-11-18 15:30"
+                String normalized = dateTimeString.trim();
+                if (normalized.length() == 16) {
+                    // "2024-11-18 15:30" -> добавляем секунды
+                    normalized += ":00";
+                }
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                return LocalDateTime.parse(normalized, formatter);
+            } else {
+                // Только дата: "2024-11-18" -> устанавливаем время на 00:00
+                return LocalDateTime.parse(dateTimeString + "T00:00:00");
+            }
+        } catch (DateTimeParseException e) {
+            throw new ValidationException("Invalid date/time format: " + dateTimeString +
+                    ". Expected formats: yyyy-MM-dd HH:mm:ss, yyyy-MM-ddTHH:mm, or yyyy-MM-dd");
+        }
+    }
+
+    @Override
+    public List<Task> findByResponsible(Integer employeeId) {
+        if (employeeId == null || employeeId <= 0) {
+            throw new ValidationException("Invalid employee ID");
+        }
+        return dao.findAll().stream()
+                .filter(t -> employeeId.equals(t.getResponsibleId()))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public EmployeeStats getEmployeeStats(Integer employeeId) {
+        if (employeeId == null || employeeId <= 0) {
+            throw new ValidationException("Employee ID must be positive");
+        }
+
+        EmployeeStats stats = new EmployeeStats();
+
+        // Считаем задачи, где сотрудник ответственный
+        var myTasks = dao.findAll().stream()
+                .filter(t -> employeeId.equals(t.getResponsibleId()))
+                .toList();
+        stats.setTasksCount(myTasks.size());
+
+        // Собираем ID задач, чтобы искать связанные сущности
+        var myTaskIds = myTasks.stream()
+                .map(Task::getId)
+                .filter(Objects::nonNull)
+                .toList();
+
+        // Сделки, привязанные к его задачам
+        stats.setDealsCount((int) dealDao.findAll().stream()
+                .filter(d -> d.getTaskId() != null && myTaskIds.contains(d.getTaskId()))
+                .count());
+
+        // Встречи, привязанные к его задачам
+        stats.setMeetingsCount((int) meetingDao.findAll().stream()
+                .filter(m -> m.getTaskId() != null && myTaskIds.contains(m.getTaskId()))
+                .count());
+
+        // Общая статистика CRM
+        stats.setTotalEmployees(employeeDao.findAll().size());
+        stats.setTotalClients(clientDao.findAll().size());
+        stats.setActiveDeals((int) dealDao.findAll().stream()
+                .filter(d -> "Active".equalsIgnoreCase(d.getStatus()))
+                .count());
+
+        return stats;
     }
 }

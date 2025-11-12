@@ -19,5 +19,6 @@
 <br/>
 <a href="deal?action=edit&id=${deal.id}">Редактировать</a> |
 <a href="deal?action=list">Назад к списку</a>
+<a href="index.jsp">На главную</a>
 </body>
 </html>

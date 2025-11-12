@@ -87,7 +87,7 @@ public class TaskController {
                 String dueDateStr = ConsoleHelper.ask("Due Date (YYYY-MM-DD)");
                 String dueTimeStr = ConsoleHelper.ask("Due Time (HH:MM) or leave empty for 23:59");
                 String priority = ConsoleHelper.ask("Priority (High/Medium/Low)");
-                String status = ConsoleHelper.ask("Status (Pending/In Progress/Completed/Cancelled/On Hold)");
+                String status = ConsoleHelper.ask("Status (In Progress/Completed/Cancelled/On Hold)");
                 String responsibleIdStr = ConsoleHelper.ask("Responsible Employee ID");
                 String creatorIdStr = ConsoleHelper.ask("Creator Employee ID");
                 String clientIdStr = ConsoleHelper.ask("Client ID (optional)");

@@ -34,6 +34,7 @@ public class DealServiceImpl implements DealService {
         return dao.findById(id);
     }
 
+
     @Override
     public Deal create(Deal deal) {
         validateDeal(deal);
@@ -192,5 +193,13 @@ public class DealServiceImpl implements DealService {
                 .ifPresent(deal -> {
                     throw new ValidationException("Deal with number '" + dealNumber + "' already exists");
                 });
+    }
+
+    @Override
+    public Optional<Deal> safeGetById(Integer id) {
+        if (id == null || id <= 0) {
+            return Optional.empty();
+        }
+        return dao.findById(id);
     }
 }

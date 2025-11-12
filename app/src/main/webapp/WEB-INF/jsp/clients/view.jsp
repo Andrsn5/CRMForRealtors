@@ -20,5 +20,6 @@
 <br/>
 <a href="client?action=edit&id=${client.id}">Редактировать</a> |
 <a href="client?action=list">Назад к списку</a>
+<a href="index.jsp">На главную</a>
 </body>
 </html>

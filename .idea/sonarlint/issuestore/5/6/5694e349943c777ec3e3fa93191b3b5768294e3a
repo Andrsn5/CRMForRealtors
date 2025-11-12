@@ -1,0 +1,11 @@
+
+L
+java:S1948"/Make "clientService" transient or serializable.(’†˜É8²‡Æ§3
+L	java:S106"+Replace this use of System.out by a logger.(÷ö„Øÿÿÿÿÿ8¶‡Æ§3
+L	java:S106,"+Replace this use of System.out by a logger.(Öîæûÿÿÿÿ8¹‡Æ§3
+L	java:S1060"+Replace this use of System.err by a logger.(‡ïèôúÿÿÿÿ8‡âûÅ§3
+L	java:S106;"+Replace this use of System.out by a logger.(õÃíŒÿÿÿÿÿ8»‡Æ§3
+•
+java:S1130E"yRemove the declaration of thrown exception 'jakarta.servlet.ServletException', as it cannot be thrown from method's body.(ıù±8½‡Æ§3
+L	java:S106T"+Replace this use of System.out by a logger.(œ·®äÿÿÿÿÿ8Á‡Æ§3
+L	java:S106`"+Replace this use of System.err by a logger.(Ã€²¶ıÿÿÿÿ8Â‡Æ§3

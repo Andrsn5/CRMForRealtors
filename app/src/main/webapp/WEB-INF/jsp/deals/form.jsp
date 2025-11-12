@@ -6,6 +6,12 @@
     <title><c:if test="${empty deal}">Новая</c:if><c:if test="${!empty deal}">Редактировать</c:if> сделка</title>
 </head>
 <body>
+<%-- Отображение ошибок --%>
+<c:if test="${not empty error}">
+    <div style="color: red; margin-bottom: 10px; padding: 10px; border: 1px solid red;">
+        <strong>Ошибка:</strong> ${error}
+    </div>
+</c:if>
 <h2><c:if test="${empty deal}">Новая</c:if><c:if test="${!empty deal}">Редактировать</c:if> сделка</h2>
 <form method="post" action="deal">
     <input type="hidden" name="id" value="${deal.id}" />
@@ -16,13 +22,15 @@
     Комиссия: <input type="number" step="0.01" name="commission" value="${deal.commission}"/><br/>
     Статус:
     <select name="status">
-        <option value="черновик" <c:if test="${deal.status == 'черновик'}">selected</c:if>>Черновик</option>
-        <option value="в работе" <c:if test="${deal.status == 'в работе'}">selected</c:if>>В работе</option>
-        <option value="завершена" <c:if test="${deal.status == 'завершена'}">selected</c:if>>Завершена</option>
-        <option value="отменена" <c:if test="${deal.status == 'отменена'}">selected</c:if>>Отменена</option>
+        <option value="active" <c:if test="${deal.status == 'active'}">selected</c:if>>active</option>
+        <option value="sold" <c:if test="${deal.status == 'sold'}">selected</c:if>>sold</option>
+        <option value="withdrawn in progress" <c:if test="${deal.status == 'withdrawn in progress'}">selected</c:if>>withdrawn in progress</option>
+        <option value="completed" <c:if test="${deal.status == 'completed'}">selected</c:if>>completed</option>
+        <option value="cancelled" <c:if test="${deal.status == 'cancelled'}">selected</c:if>>cancelled</option>
     </select><br/>
     <button type="submit">Сохранить</button>
 </form>
 <a href="deal?action=list">Назад к списку</a>
+<a href="index.jsp">На главную</a>
 </body>
 </html>

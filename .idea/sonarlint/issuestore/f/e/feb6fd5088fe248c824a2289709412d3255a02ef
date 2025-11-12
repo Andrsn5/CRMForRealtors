@@ -1,11 +1,11 @@
 
+t
+java:S1192k"WDefine a constant instead of duplicating this literal "âŒ Validation error: " 3 times.(Ó¾8ŞÕ¯û¥3
 …
 java:S1192l"hDefine a constant instead of duplicating this literal "Please correct the data and try again.
 " 3 times.(ı· 8ŞÕ¯û¥3
 n
 java:S1192n"QDefine a constant instead of duplicating this literal "Try again? (y/n)" 6 times.(†8ŞÕ¯û¥3
-t
-java:S1192k"WDefine a constant instead of duplicating this literal "âŒ Validation error: " 3 times.(Ó¾8ŞÕ¯û¥3
 z	java:S135B"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ8ŞÕ¯û¥3
 {	java:S135€"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ8ŞÕ¯û¥3
 {	java:S135Ù"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ8ŞÕ¯û¥3
@@ -57,5 +57,3 @@ M	java:S106ò"+Replace this use of System.out by a logger.(ùÈşÄşÿÿÿÿ8‚ß¯û¥3
 H	java:S106÷"+Replace this use of System.out by a logger.(Ó¾8‚ß¯û¥3
 H	java:S106ø"+Replace this use of System.out by a logger.(ı· 8‚ß¯û¥3
 H	java:S106ÿ"+Replace this use of System.out by a logger.(Ë‚›Ù8‚ß¯û¥3
-H	java:S106¨"+Replace this use of System.out by a logger.(–€‹Ÿ8†ß¯û¥3
-G	java:S106ª"+Replace this use of System.out by a logger.(Äã¸G8†ß¯û¥3

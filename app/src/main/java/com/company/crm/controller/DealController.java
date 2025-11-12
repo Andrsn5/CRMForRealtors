@@ -263,39 +263,4 @@ public class DealController {
         ConsoleHelper.pause();
     }
 
-    // Дополнительный метод для быстрого создания тестовых данных
-    public void createSampleData() {
-        try {
-            String[] statuses = {"активно", "продано", "завершена", "снято в процессе", "отменена"};
-            BigDecimal[] amounts = {
-                    new BigDecimal("1000000.00"),
-                    new BigDecimal("2500000.50"),
-                    new BigDecimal("5000000.75"),
-                    new BigDecimal("7500000.25"),
-                    new BigDecimal("10000000.00")
-            };
-            BigDecimal[] commissions = {
-                    new BigDecimal("50000.00"),
-                    new BigDecimal("75000.50"),
-                    new BigDecimal("100000.75"),
-                    new BigDecimal("125000.25"),
-                    new BigDecimal("150000.00")
-            };
-
-            for (int i = 0; i < 5; i++) {
-                Deal deal = new Deal();
-                deal.setDealNumber("SAMPLE-" + (2000 + i));
-                deal.setTaskId(i + 1);
-                deal.setDealAmount(amounts[i]);
-                deal.setDealDate(LocalDate.now().plusDays(i));
-                deal.setCommission(commissions[i]);
-                deal.setStatus(statuses[i]);
-
-                service.create(deal);
-            }
-            System.out.println("✅ Sample deals created successfully");
-        } catch (ValidationException e) {
-            System.out.println("❌ Error creating sample data: " + e.getMessage());
-        }
-    }
 }

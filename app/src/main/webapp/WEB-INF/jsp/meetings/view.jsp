@@ -20,5 +20,6 @@
 <br/>
 <a href="meeting?action=edit&id=${meeting.id}">Редактировать</a> |
 <a href="meeting?action=list">Назад к списку</a>
+<a href="index.jsp">На главную</a>
 </body>
 </html>

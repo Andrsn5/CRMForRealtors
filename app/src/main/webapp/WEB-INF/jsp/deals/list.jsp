@@ -8,6 +8,7 @@
 <body>
 <h2>Список сделок</h2>
 <a href="deal?action=new">Добавить сделку</a>
+<a href="index.jsp">На главную</a>
 <table border="1">
 <tr><th>ID</th><th>Номер сделки</th><th>ID задачи</th><th>Сумма</th><th>Дата</th><th>Комиссия</th><th>Статус</th><th>Действия</th></tr>
 <c:forEach var="deal" items="${deals}">

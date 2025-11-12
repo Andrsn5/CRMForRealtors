@@ -8,6 +8,7 @@
 <body>
 <h2>Список дополнительных условий</h2>
 <a href="additionalCondition?action=new">Добавить условие</a>
+<a href="index.jsp">На главную</a>
 <table border="1">
 <tr><th>ID</th><th>Тип условия</th><th>Описание</th><th>Срок</th><th>Статус</th><th>Приоритет</th><th>Действия</th></tr>
 <c:forEach var="condition" items="${conditions}">

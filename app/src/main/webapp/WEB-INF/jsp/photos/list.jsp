@@ -8,6 +8,7 @@
 <body>
 <h2>Список фотографий</h2>
 <a href="photo?action=new">Добавить фотографию</a>
+<a href="index.jsp">На главную</a>
 <table border="1">
 <tr><th>ID</th><th>URL фотографии</th><th>Подпись</th><th>Порядок</th><th>ID объекта</th><th>Действия</th></tr>
 <c:forEach var="photo" items="${photos}">

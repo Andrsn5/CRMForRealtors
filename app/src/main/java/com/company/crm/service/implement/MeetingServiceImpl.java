@@ -9,6 +9,8 @@ import com.company.crm.util.ValidationException;
 import com.company.crm.util.ValidationUtils;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Optional;
 
@@ -73,6 +75,7 @@ public class MeetingServiceImpl implements MeetingService {
         ValidationUtils.validateMaxLength(meeting.getTitle(), 255, "Title");
         ValidationUtils.validateMaxLength(meeting.getLocation(), 255, "Location");
         ValidationUtils.validateMaxLength(meeting.getStatus(), 50, "Status");
+        ValidationUtils.validateMaxLength(meeting.getNotes(), 1000, "Notes");
 
         // Валидация даты встречи
         if (meeting.getMeetingDate() != null) {
@@ -120,7 +123,7 @@ public class MeetingServiceImpl implements MeetingService {
             throw new ValidationException("Status is required");
         }
 
-        String[] validStatuses = {"scheduled", "completed", "cancelled", "rescheduled", "in progress"};
+        String[] validStatuses = {"scheduled", "completed", "cancelled"};
 
         boolean isValid = false;
         for (String validStatus : validStatuses) {
@@ -131,16 +134,14 @@ public class MeetingServiceImpl implements MeetingService {
         }
 
         if (!isValid) {
-            throw new ValidationException("Invalid status. Allowed values: scheduled, completed, cancelled, rescheduled, in progress");
+            throw new ValidationException("Invalid status. Allowed values: scheduled, completed, cancelled");
         }
     }
-
 
     private void checkMeetingUniqueness(Meeting meeting) {
         if (meeting.getClientId() == null || meeting.getMeetingDate() == null) {
             return;
         }
-
 
         List<Meeting> existingMeetings = dao.findAll().stream()
                 .filter(existingMeeting ->
@@ -163,7 +164,6 @@ public class MeetingServiceImpl implements MeetingService {
         if (meeting.getClientId() == null || meeting.getMeetingDate() == null) {
             return;
         }
-
 
         List<Meeting> existingMeetings = dao.findAll().stream()
                 .filter(existingMeeting ->
@@ -196,13 +196,45 @@ public class MeetingServiceImpl implements MeetingService {
     // Вспомогательный метод для определения активного статуса
     private boolean isActiveStatus(String status) {
         return status != null &&
-                ("запланирована".equalsIgnoreCase(status) ||
-                        "в процессе".equalsIgnoreCase(status));
+                ("scheduled".equalsIgnoreCase(status));
     }
 
     // Вспомогательный метод для форматирования даты/времени
     private String formatDateTime(LocalDateTime dateTime) {
         return dateTime != null ? dateTime.toString().replace('T', ' ') : "null";
+    }
+
+    // Новый метод для парсинга даты и времени из строки
+    public LocalDateTime parseDateTime(String dateTimeString) {
+        if (dateTimeString == null || dateTimeString.trim().isEmpty()) {
+            return null;
+        }
+
+        try {
+            // Пробуем разные форматы даты и времени
+            if (dateTimeString.contains("T")) {
+                // HTML5 datetime-local format: "2024-11-18T15:30"
+                if (dateTimeString.length() == 16) {
+                    return LocalDateTime.parse(dateTimeString + ":00");
+                }
+                return LocalDateTime.parse(dateTimeString);
+            } else if (dateTimeString.contains(" ")) {
+                // Формат с временем: "2024-11-18 15:30:00" или "2024-11-18 15:30"
+                String normalized = dateTimeString.trim();
+                if (normalized.length() == 16) {
+                    // "2024-11-18 15:30" -> добавляем секунды
+                    normalized += ":00";
+                }
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                return LocalDateTime.parse(normalized, formatter);
+            } else {
+                // Только дата: "2024-11-18" -> устанавливаем время на 00:00
+                return LocalDateTime.parse(dateTimeString + "T00:00:00");
+            }
+        } catch (DateTimeParseException e) {
+            throw new ValidationException("Invalid date/time format: " + dateTimeString +
+                    ". Expected formats: yyyy-MM-dd HH:mm:ss, yyyy-MM-ddTHH:mm, or yyyy-MM-dd");
+        }
     }
 
     // Дополнительные методы для бизнес-логики
@@ -258,5 +290,13 @@ public class MeetingServiceImpl implements MeetingService {
                 .filter(meeting -> isActiveStatus(meeting.getStatus()))
                 .findFirst()
                 .isEmpty();
+    }
+
+    @Override
+    public Optional<Meeting> safeGetById(Integer id) {
+        if (id == null || id <= 0) {
+            return Optional.empty();
+        }
+        return dao.findById(id);
     }
 }

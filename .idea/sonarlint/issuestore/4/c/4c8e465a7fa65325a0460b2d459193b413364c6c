@@ -1,0 +1,9 @@
+
+f
+java:S11921"JDefine a constant instead of duplicating this literal "COMPLETED" 3 times.(Í½§G8˜’½Ã§3
+O
+java:S1948"-Make "taskService" transient or serializable.(”¡Ğšøÿÿÿÿ8·’½Ã§3
+N
+java:S1948"1Make "employeeService" transient or serializable.(ŞÈ8·’½Ã§3
+…
+java:S1157;"cReplace these toUpperCase()/toLowerCase() and equals() calls with a single equalsIgnoreCase() call.(Œ•Ú€şÿÿÿÿ8Ç’½Ã§3

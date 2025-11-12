@@ -7,6 +7,9 @@ import com.company.crm.util.ValidationException;
 import com.company.crm.util.ValidationUtils;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Optional;
 
@@ -62,6 +65,7 @@ public class AdditionalConditionServiceImpl implements AdditionalConditionServic
 
         // Валидация длины строк
         ValidationUtils.validateMaxLength(condition.getConditionType(), 100, "Condition type");
+        ValidationUtils.validateMaxLength(condition.getDescription(), 500, "Description");
         ValidationUtils.validateMaxLength(condition.getStatus(), 50, "Status");
         ValidationUtils.validateMaxLength(condition.getPriority(), 50, "Priority");
 
@@ -93,7 +97,7 @@ public class AdditionalConditionServiceImpl implements AdditionalConditionServic
             throw new ValidationException("Condition type is required");
         }
 
-        String[] validTypes = {"marketing", "administrative", "customer service", "legal", "technical"};
+        String[] validTypes = {"marketing", "administrative", "customer service", "logistics"};
 
         boolean isValid = false;
         for (String validType : validTypes) {
@@ -104,7 +108,7 @@ public class AdditionalConditionServiceImpl implements AdditionalConditionServic
         }
 
         if (!isValid) {
-            throw new ValidationException("Invalid condition type. Allowed values: marketing, administrative, customer service, legal, technical");
+            throw new ValidationException("Invalid condition type. Allowed values: marketing, administrative, customer service, logistics");
         }
     }
 
@@ -113,7 +117,7 @@ public class AdditionalConditionServiceImpl implements AdditionalConditionServic
             throw new ValidationException("Status is required");
         }
 
-        String[] validStatuses = {"completed", "active", "canceled", "in progress", "paused"};
+        String[] validStatuses = {"completed", "active", "canceled"};
 
         boolean isValid = false;
         for (String validStatus : validStatuses) {
@@ -124,7 +128,7 @@ public class AdditionalConditionServiceImpl implements AdditionalConditionServic
         }
 
         if (!isValid) {
-            throw new ValidationException("Invalid status. Allowed values: completed, active, canceled, in progress, paused");
+            throw new ValidationException("Invalid status. Allowed values: completed, active, canceled");
         }
     }
 
@@ -148,5 +152,33 @@ public class AdditionalConditionServiceImpl implements AdditionalConditionServic
         }
     }
 
+    @Override
+    public Optional<AdditionalCondition> safeGetById(Integer id) {
+        if (id == null || id <= 0) {
+            return Optional.empty();
+        }
+        return dao.findById(id);
+    }
 
+    // Новый метод для парсинга даты из строки
+    public LocalDate parseDate(String dateString) {
+        if (dateString == null || dateString.trim().isEmpty()) {
+            return null;
+        }
+
+        try {
+            // Пробуем разные форматы даты
+            if (dateString.contains(" ")) {
+                // Формат с временем: "2024-11-18 00:00:00"
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                LocalDateTime dateTime = LocalDateTime.parse(dateString, formatter);
+                return dateTime.toLocalDate();
+            } else {
+                // Формат только даты: "2024-11-18"
+                return LocalDate.parse(dateString);
+            }
+        } catch (DateTimeParseException e) {
+            throw new ValidationException("Invalid date format: " + dateString + ". Expected format: yyyy-MM-dd or yyyy-MM-dd HH:mm:ss");
+        }
+    }
 }

@@ -69,7 +69,7 @@ public class EmployeeController {
                 String ln = ConsoleHelper.ask("Last Name");
                 String email = ConsoleHelper.ask("Email");
                 String phone = ConsoleHelper.ask("Phone");
-                String position = ConsoleHelper.ask("Position");
+                String position = ConsoleHelper.ask("Position(Analyst ,Assistant, Sales Manager ,Real Estate Agent ,Senior Manager)");
 
                 Employee e = new Employee();
                 e.setFirstName(fn);

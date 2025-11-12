@@ -21,5 +21,6 @@
 <br/>
 <a href="photo?action=edit&id=${photo.id}">Редактировать</a> |
 <a href="photo?action=list">Назад к списку</a>
+<a href="index.jsp">На главную</a>
 </body>
 </html>

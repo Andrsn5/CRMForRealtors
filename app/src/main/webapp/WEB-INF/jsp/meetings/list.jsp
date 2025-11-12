@@ -8,6 +8,8 @@
 <body>
 <h2>Список встреч</h2>
 <a href="meeting?action=new">Добавить встречу</a>
+<a href="index.jsp">На главную</a>
+
 <table border="1">
 <tr><th>ID</th><th>Название</th><th>Дата и время</th><th>Место</th><th>ID клиента</th><th>Статус</th><th>Действия</th></tr>
 <c:forEach var="meeting" items="${meetings}">

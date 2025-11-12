@@ -17,6 +17,8 @@ public class AppConfig {
     private final PhotoDaoJdbcImpl photoDao = new PhotoDaoJdbcImpl();
     private final AdditionalConditionDaoJdbcImpl additionalConditionDao = new AdditionalConditionDaoJdbcImpl();
 
+
+
     // Service instances
     private final EmployeeService employeeService = new EmployeeServiceImpl(employeeDao);
     private final ClientService clientService = new ClientServiceImpl(clientDao);
@@ -26,6 +28,7 @@ public class AppConfig {
     private final MeetingService meetingService = new MeetingServiceImpl(meetingDao, clientDao, taskDao);
     private final PhotoService photoService = new PhotoServiceImpl(photoDao, objectDao);
     private final AdditionalConditionService additionalConditionService = new AdditionalConditionServiceImpl(additionalConditionDao);
+    private final AuthService authService = new AuthServiceImpl(employeeDao);
 
     // Controller instances
     private final EmployeeController employeeController;
@@ -105,6 +108,7 @@ public class AppConfig {
     public MeetingService getMeetingService() { return meetingService; }
     public DealService getDealService() { return dealService; }
     public AdditionalConditionService getAdditionalConditionService() { return additionalConditionService; }
+    public AuthService getAuthService() { return authService;}
 
     public EmployeeController getEmployeeController() { return employeeController; }
     public ClientController getClientController() { return clientController; }

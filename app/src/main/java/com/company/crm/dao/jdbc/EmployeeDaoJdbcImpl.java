@@ -43,9 +43,9 @@ public class EmployeeDaoJdbcImpl implements EmployeeDao {
     @Override
     public Employee save(Employee e) {
         String sql = """
-            INSERT INTO employees(first_name,last_name,email,phone,position,hire_date,is_active)
-            VALUES (?,?,?,?,?,?,?) RETURNING id_employee
-            """;
+        INSERT INTO employees(first_name, last_name, email, phone, position, hire_date, is_active, password_hash)
+        VALUES (?,?,?,?,?,?,?,?) RETURNING id_employee
+        """;
         try (Connection c = ConnectionFactory.getConnection();
              PreparedStatement ps = c.prepareStatement(sql)) {
 
@@ -56,6 +56,7 @@ public class EmployeeDaoJdbcImpl implements EmployeeDao {
             ps.setString(5, e.getPosition());
             ps.setObject(6, e.getHireDate());
             ps.setBoolean(7, e.isActive());
+            ps.setString(8, e.getPasswordHash()); // Добавляем хеш пароля
 
             ResultSet rs = ps.executeQuery();
             if (rs.next()) e.setId(rs.getInt("id_employee"));
@@ -68,9 +69,10 @@ public class EmployeeDaoJdbcImpl implements EmployeeDao {
     @Override
     public void update(Employee e) {
         String sql = """
-            UPDATE employees SET first_name=?, last_name=?, email=?, phone=?, position=?, hire_date=?, is_active=?
-            WHERE id_employee=?
-            """;
+        UPDATE employees SET first_name=?, last_name=?, email=?, phone=?, position=?, 
+        hire_date=?, is_active=?, password_hash=?
+        WHERE id_employee=?
+        """;
         try (Connection c = ConnectionFactory.getConnection();
              PreparedStatement ps = c.prepareStatement(sql)) {
 
@@ -81,23 +83,12 @@ public class EmployeeDaoJdbcImpl implements EmployeeDao {
             ps.setString(5, e.getPosition());
             ps.setObject(6, e.getHireDate());
             ps.setBoolean(7, e.isActive());
-            ps.setInt(8, e.getId());
+            ps.setString(8, e.getPasswordHash()); // Обновляем хеш пароля
+            ps.setInt(9, e.getId());
             ps.executeUpdate();
 
         } catch (SQLException ex) {
             throw new RuntimeException("Error updating employee", ex);
-        }
-    }
-
-    @Override
-    public void delete(int id) {
-        String sql = "DELETE FROM employees WHERE id_employee=?";
-        try (Connection c = ConnectionFactory.getConnection();
-             PreparedStatement ps = c.prepareStatement(sql)) {
-            ps.setInt(1, id);
-            ps.executeUpdate();
-        } catch (SQLException ex) {
-            throw new RuntimeException("Error deleting employee", ex);
         }
     }
 
@@ -112,6 +103,38 @@ public class EmployeeDaoJdbcImpl implements EmployeeDao {
         Date hire = rs.getDate("hire_date");
         e.setHireDate(hire != null ? hire.toLocalDate() : null);
         e.setActive(rs.getBoolean("is_active"));
+        e.setPasswordHash(rs.getString("password_hash")); // Добавляем пароль
         return e;
     }
+
+    @Override
+    public void delete(int id) {
+        String sql = "DELETE FROM employees WHERE id_employee=?";
+        try (Connection c = ConnectionFactory.getConnection();
+             PreparedStatement ps = c.prepareStatement(sql)) {
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            throw new RuntimeException("Error deleting employee", ex);
+        }
+    }
+
+
+    @Override
+    public Optional<Employee> findByEmail(String email) {
+        String sql = "SELECT * FROM employees WHERE email = ? AND is_active = true";
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, email);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return Optional.of(mapRow(rs));
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding employee by email", e);
+        }
+        return Optional.empty();
+    }
+
 }

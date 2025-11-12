@@ -7,7 +7,9 @@
 </head>
 <body>
 <h2>Список задач</h2>
-<a href="task?action=new">Добавить задачу</a>
+<a href="adminTask?action=new">Добавить задачу</a>
+<a href="index.jsp">На главную</a>
+
 <table border="1">
 <tr><th>ID</th><th>Название</th><th>Срок</th><th>Приоритет</th><th>Статус</th><th>Ответственный</th><th>Действия</th></tr>
 <c:forEach var="task" items="${tasks}">
@@ -19,9 +21,9 @@
         <td>${task.status}</td>
         <td>${task.responsibleId}</td>
         <td>
-            <a href="task?action=view&id=${task.id}">Просмотр</a>
-            <a href="task?action=edit&id=${task.id}">Редактировать</a>
-            <a href="task?action=delete&id=${task.id}">Удалить</a>
+            <a href="adminTask?action=view&id=${task.id}">Просмотр</a>
+            <a href="adminTask?action=edit&id=${task.id}">Редактировать</a>
+            <a href="adminTask?action=delete&id=${task.id}">Удалить</a>
         </td>
     </tr>
 </c:forEach>

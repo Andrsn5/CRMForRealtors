@@ -68,11 +68,11 @@ public class AdditionalConditionController {
         while (true) {
             try {
                 System.out.println("\n=== CREATE NEW ADDITIONAL CONDITION ===");
-                String conditionType = ConsoleHelper.ask("Condition Type (marketing/administrative/customer service/legal/technical)");
+                String conditionType = ConsoleHelper.ask("Condition Type (marketing, administrative, customer service, logistics)");
                 String description = ConsoleHelper.ask("Description");
                 String deadlineStr = ConsoleHelper.ask("Deadline (YYYY-MM-DD)");
                 String requiredStr = ConsoleHelper.ask("Required (true/false)");
-                String status = ConsoleHelper.ask("Status (completed, active, canceled, in progress, paused)");
+                String status = ConsoleHelper.ask("Status (completed, active, canceled)");
                 String priority = ConsoleHelper.ask("Priority (high/medium/low)");
                 String notes = ConsoleHelper.ask("Notes");
 

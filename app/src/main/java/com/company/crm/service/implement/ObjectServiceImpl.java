@@ -33,7 +33,7 @@ public class ObjectServiceImpl implements ObjectService {
     @Override
     public Object create(Object object) {
         validateObject(object);
-        checkTitleUniqueness(object); // Проверка уникальности названия
+        checkAddressUniqueness(object); // Проверка уникальности названия
         return dao.save(object);
     }
 
@@ -43,7 +43,7 @@ public class ObjectServiceImpl implements ObjectService {
             throw new ValidationException("Valid property ID is required for update");
         }
         validateObject(object);
-        checkTitleUniquenessForUpdate(object); // Проверка уникальности названия при обновлении
+        checkAddressUniquenessForUpdate(object); // Проверка уникальности названия при обновлении
         dao.update(object);
     }
 
@@ -138,7 +138,7 @@ public class ObjectServiceImpl implements ObjectService {
             throw new ValidationException("Status is required");
         }
 
-        String[] validStatuses = {"Available", "Sold", "Rented", "Under Contract", "Reserved", "Draft"};
+        String[] validStatuses = {"Available", "Sold", "Rented", "Reserved", "Draft"};
 
         boolean isValid = false;
         for (String validStatus : validStatuses) {
@@ -149,40 +149,40 @@ public class ObjectServiceImpl implements ObjectService {
         }
 
         if (!isValid) {
-            throw new ValidationException("Invalid status. Allowed values: Available, Sold, Rented, Under Contract, Reserved, Draft");
+            throw new ValidationException("Invalid status. Allowed values: Available, Sold, Rented, Reserved, Draft");
         }
     }
 
-    // НОВАЯ ПРОВЕРКА: Уникальность названия свойства
-    private void checkTitleUniqueness(Object object) {
-        if (object.getTitle() == null || object.getTitle().trim().isEmpty()) {
+    // ПРОВЕРКА: Уникальность только для адреса (создание)
+    private void checkAddressUniqueness(Object object) {
+        if (object.getAddress() == null || object.getAddress().trim().isEmpty()) {
             return;
         }
 
         dao.findAll().stream()
                 .filter(existingObject ->
-                        object.getTitle().equalsIgnoreCase(existingObject.getTitle())
+                        object.getAddress().equalsIgnoreCase(existingObject.getAddress())
                 )
                 .findFirst()
                 .ifPresent(existingObject -> {
-                    throw new ValidationException("Property with title '" + object.getTitle() + "' already exists (ID: " + existingObject.getId() + ")");
+                    throw new ValidationException("Property with address '" + object.getAddress() + "' already exists (ID: " + existingObject.getId() + ")");
                 });
     }
 
-    // НОВАЯ ПРОВЕРКА: Уникальность названия свойства при обновлении
-    private void checkTitleUniquenessForUpdate(Object object) {
-        if (object.getTitle() == null || object.getTitle().trim().isEmpty()) {
+    // ПРОВЕРКА: Уникальность только для адреса (обновление)
+    private void checkAddressUniquenessForUpdate(Object object) {
+        if (object.getAddress() == null || object.getAddress().trim().isEmpty()) {
             return;
         }
 
         dao.findAll().stream()
                 .filter(existingObject ->
                         !existingObject.getId().equals(object.getId()) &&
-                                object.getTitle().equalsIgnoreCase(existingObject.getTitle())
+                                object.getAddress().equalsIgnoreCase(existingObject.getAddress())
                 )
                 .findFirst()
                 .ifPresent(existingObject -> {
-                    throw new ValidationException("Property with title '" + object.getTitle() + "' already exists (ID: " + existingObject.getId() + ")");
+                    throw new ValidationException("Property with address '" + object.getAddress() + "' already exists (ID: " + existingObject.getId() + ")");
                 });
     }
 

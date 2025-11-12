@@ -8,6 +8,7 @@
 <body>
 <h2>Список объектов недвижимости</h2>
 <a href="object?action=new">Добавить объект</a>
+<a href="index.jsp">На главную</a>
 <table border="1">
 <tr><th>ID</th><th>Название</th><th>Тип</th><th>Тип сделки</th><th>Цена</th><th>Адрес</th><th>Действия</th></tr>
 <c:forEach var="obj" items="${objects}">

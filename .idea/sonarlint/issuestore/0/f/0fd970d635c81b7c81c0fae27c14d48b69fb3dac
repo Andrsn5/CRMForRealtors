@@ -1,0 +1,7 @@
+
+y
+java:S1192 "\Define a constant instead of duplicating this literal "/WEB-INF/jsp/tasks/form.jsp" 4 times.(Ò©©ê8ˆ¾¢Ñ§3
+O
+java:S1948"-Make "taskService" transient or serializable.(”¡Ðšøÿÿÿÿ8ü¾¢Ñ§3
+o
+java:S3776/"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(­‘úå8…Š£Ñ§3

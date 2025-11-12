@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -17,6 +18,7 @@
 </table>
 <br/>
 <a href="employee?action=edit&id=${employee.id}">Редактировать</a> |
-<a href="employee?action=list">Назад к списку</a>
+<a href="employee?action=list">Назад к списку</a> |
+<a href="index.jsp">На главную</a>
 </body>
 </html>

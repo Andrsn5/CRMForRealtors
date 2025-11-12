@@ -1,0 +1,9 @@
+
+T
+java:S1948"2Make "conditionService" transient or serializable.(†øÅûÿÿÿÿ8ÄîÆÆ§3
+G	java:S106"+Replace this use of System.out by a logger.(·¯ø€8ÄîÆÆ§3
+L	java:S106-"+Replace this use of System.err by a logger.(‡ïèôúÿÿÿÿ8ÄîÆÆ§3
+•
+java:S1130@"yRemove the declaration of thrown exception 'jakarta.servlet.ServletException', as it cannot be thrown from method's body.(ıù±8ÄîÆÆ§3
+G	java:S106P"+Replace this use of System.out by a logger.(¤æ€ï8ÄîÆÆ§3
+G	java:S106["+Replace this use of System.err by a logger.(–´¬¥8ÄîÆÆ§3

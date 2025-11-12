@@ -3,6 +3,7 @@ package com.company.crm.service.implement;
 import com.company.crm.dao.interfaces.EmployeeDao;
 import com.company.crm.model.Employee;
 import com.company.crm.service.interfaces.EmployeeService;
+import com.company.crm.util.PasswordUtil;
 import com.company.crm.util.ValidationException;
 import com.company.crm.util.ValidationUtils;
 
@@ -36,10 +37,15 @@ public class EmployeeServiceImpl implements EmployeeService {
         validateEmployee(employee);
         checkEmailUniqueness(employee.getEmail());
         checkPosition(employee.getPosition());
+
+        // Хешируем пароль при создании сотрудника
+        if (employee.getPasswordHash() != null && !employee.getPasswordHash().isEmpty()) {
+            String hashedPassword = PasswordUtil.hashPassword(employee.getPasswordHash());
+            employee.setPasswordHash(hashedPassword);
+        }
+
         return dao.save(employee);
     }
-
-
 
     @Override
     public void update(Employee employee) {
@@ -49,6 +55,16 @@ public class EmployeeServiceImpl implements EmployeeService {
         validateEmployee(employee);
         checkEmailUniquenessForUpdate(employee.getId(), employee.getEmail());
         checkPosition(employee.getPosition());
+
+        // Если пароль был изменен - хешируем его
+        if (employee.getPasswordHash() != null && !employee.getPasswordHash().isEmpty()) {
+            // Проверяем, не является ли уже хешированным (простая проверка)
+            if (!employee.getPasswordHash().startsWith("$2a$")) {
+                String hashedPassword = PasswordUtil.hashPassword(employee.getPasswordHash());
+                employee.setPasswordHash(hashedPassword);
+            }
+        }
+
         dao.update(employee);
     }
 
@@ -83,6 +99,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                     throw new ValidationException("Employee with email " + email + " already exists");
                 });
     }
+
 
     private void checkPosition(String position) {
         if (!validPositions.contains(position)) {

@@ -1,0 +1,19 @@
+
+X
+java:S1141¤"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8°®´Ç§3
+Q
+java:S1948"/Make "objectService" transient or serializable.( ×Áðýÿÿÿÿ8¥°´Ç§3
+P
+java:S1948".Make "photoService" transient or serializable.(úï—ðÿÿÿÿÿ8¥°´Ç§3
+G	java:S106'"+Replace this use of System.out by a logger.(é©ôÕ8¦°´Ç§3
+G	java:S1067"+Replace this use of System.out by a logger.(å’ÿã8¦°´Ç§3
+L	java:S106;"+Replace this use of System.err by a logger.(‡ïèôúÿÿÿÿ8¦°´Ç§3
+G	java:S106F"+Replace this use of System.out by a logger.(ðºðá8¦°´Ç§3
+•
+java:S1130P"yRemove the declaration of thrown exception 'jakarta.servlet.ServletException', as it cannot be thrown from method's body.(ýù±8¦°´Ç§3
+G	java:S106q"+Replace this use of System.out by a logger.(Í¡Ã—8¦°´Ç§3
+L	java:S106"+Replace this use of System.err by a logger.(ÿâú™ÿÿÿÿÿ8¦°´Ç§3
+u
+java:S3776†"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(ìÙÆûûÿÿÿÿ8¦°´Ç§3
+M	java:S106´"+Replace this use of System.out by a logger.(†Íííùÿÿÿÿ8¹°´Ç§3
+H	java:S106»"+Replace this use of System.err by a logger.(ù’°´8¹°´Ç§3

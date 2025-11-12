@@ -23,7 +23,8 @@
     <tr><th>ID встречи</th><td>${task.meetingId}</td></tr>
 </table>
 <br/>
-<a href="task?action=edit&id=${task.id}">Редактировать</a> |
-<a href="task?action=list">Назад к списку</a>
+<a href="adminTask?action=edit&id=${task.id}">Редактировать</a> |
+<a href="adminTask?action=list">Назад к списку</a>
+<a href="index.jsp">На главную</a>
 </body>
 </html>

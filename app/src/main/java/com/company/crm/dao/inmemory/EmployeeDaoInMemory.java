@@ -37,4 +37,9 @@ public class EmployeeDaoInMemory implements EmployeeDao {
     public void delete(int id) {
         storage.remove(id);
     }
+
+    @Override
+    public Optional<Employee> findByEmail(String username) {
+        return Optional.empty();
+    }
 }

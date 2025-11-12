@@ -1,0 +1,9 @@
+
+O
+java:S1948"-Make "dealService" transient or serializable.(ğ¥‘àúÿÿÿÿ8¤ÁÆ§3
+G	java:S106"+Replace this use of System.out by a logger.(¥÷Ÿ«8¸ÁÆ§3
+L	java:S106."+Replace this use of System.err by a logger.(‡ïèôúÿÿÿÿ8»ÁÆ§3
+•
+java:S1130A"yRemove the declaration of thrown exception 'jakarta.servlet.ServletException', as it cannot be thrown from method's body.(ıù±8¿ÁÆ§3
+L	java:S106\"+Replace this use of System.out by a logger.(î¥üìüÿÿÿÿ8ÄÁÆ§3
+L	java:S106g"+Replace this use of System.err by a logger.(êÔô¡úÿÿÿÿ8ÅÁÆ§3

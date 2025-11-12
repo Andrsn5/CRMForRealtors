@@ -78,7 +78,7 @@ public class MeetingController {
                 String location = ConsoleHelper.ask("Location");
                 String clientIdStr = ConsoleHelper.ask("Client ID");
                 String taskIdStr = ConsoleHelper.ask("Task ID (optional)");
-                String status = ConsoleHelper.ask("Status (scheduled,completed,cancelled,rescheduled,in progress)");
+                String status = ConsoleHelper.ask("Status (scheduled,completed,cancelled)");
                 String notes = ConsoleHelper.ask("Notes");
 
                 Meeting meeting = new Meeting();

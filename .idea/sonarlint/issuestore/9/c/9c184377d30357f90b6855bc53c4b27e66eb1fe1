@@ -1,0 +1,66 @@
+
+f
+java:S1192_"IDefine a constant instead of duplicating this literal "employee" 8 times.(µê”º8™š¾É§3
+e
+java:S1192|"HDefine a constant instead of duplicating this literal "meeting" 3 times.(Æª¡™8™š¾É§3
+h
+java:S1192Š"JDefine a constant instead of duplicating this literal "condition" 3 times.(Óó°§8™š¾É§3
+„
+java:S1192«"aDefine a constant instead of duplicating this literal "ĞĞµĞ²ĞµÑ€Ğ½Ñ‹Ğ¹ ID Ğ·Ğ°Ğ´Ğ°Ñ‡Ğ¸" 4 times.(â“à•øÿÿÿÿ8™š¾É§3
+„
+java:S1192¤"aDefine a constant instead of duplicating this literal "Ğ—Ğ°Ğ´Ğ°Ñ‡Ğ° Ğ½Ğµ Ğ½Ğ°Ğ¹Ğ´ĞµĞ½Ğ°" 5 times.(Œ¼ÿ€øÿÿÿÿ8™š¾É§3
+i
+java:S1192u"GDefine a constant instead of duplicating this literal "object" 3 times.(‹¼½–ıÿÿÿÿ8™š¾É§3
+s
+java:S1192˜"UDefine a constant instead of duplicating this literal "task?action=view&id=" 5 times.(ö»—Ü8™š¾É§3
+c
+java:S1192c"GDefine a constant instead of duplicating this literal "error" 20 times.(óãéZ8™š¾É§3
+h
+java:S1192©"JDefine a constant instead of duplicating this literal "COMPLETED" 3 times.(û…—¡8™š¾É§3
+i
+java:S1192n"GDefine a constant instead of duplicating this literal "client" 3 times.(Ï°œÊøÿÿÿÿ8™š¾É§3
+z
+java:S1192¬"WDefine a constant instead of duplicating this literal "/WEB-INF/jsp/error.jsp" 7 times.(õ®Èãùÿÿÿÿ8™š¾É§3
+±
+java:S1192c"”Define a constant instead of duplicating this literal "Ğ£ Ğ²Ğ°Ñ Ğ½ĞµÑ‚ Ğ¿Ñ€Ğ°Ğ² Ğ´Ğ»Ñ Ñ€ĞµĞ´Ğ°ĞºÑ‚Ğ¸Ñ€Ğ¾Ğ²Ğ°Ğ½Ğ¸Ñ ÑÑ‚Ğ¾Ğ¹ Ğ·Ğ°Ğ´Ğ°Ñ‡Ğ¸" 3 times.(óãéZ8™š¾É§3
+W
+java:S1141i"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8¸š¾É§3
+X
+java:S1141¬"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8¸š¾É§3
+O
+java:S1948"-Make "taskService" transient or serializable.(”¡Ğšøÿÿÿÿ8¾É§3
+L
+java:S1948"/Make "clientService" transient or serializable.(’†˜É8¾É§3
+Q
+java:S1948"/Make "objectService" transient or serializable.( ×Áğıÿÿÿÿ8¾É§3
+M
+java:S1948"0Make "meetingService" transient or serializable.(“ø¼à8¾É§3
+O
+java:S1948"-Make "dealService" transient or serializable.(ğ¥‘àúÿÿÿÿ8¾É§3
+N
+java:S1948"1Make "employeeService" transient or serializable.(ŞÈ8¾É§3
+T
+java:S1948"2Make "conditionService" transient or serializable.(†øÅûÿÿÿÿ8¾É§3
+P
+java:S1948".Make "photoService" transient or serializable.(úï—ğÿÿÿÿÿ8¾É§3
+t
+java:S3776R"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(”Û­úÿÿÿÿ8¾É§3
+L
+java:S2201q"/The return value of "orElseThrow" must be used.(°®¯‘8¾É§3
+Q
+java:S2201x"/The return value of "orElseThrow" must be used.(ÊŞ»¯øÿÿÿÿ8¾É§3
+L
+java:S2201"/The return value of "orElseThrow" must be used.(éöÁ8¾É§3
+R
+java:S2201†"/The return value of "orElseThrow" must be used.(Œ»Üóûÿÿÿÿ8¾É§3
+R
+java:S2201"/The return value of "orElseThrow" must be used.(¼¾õãıÿÿÿÿ8¾É§3
+p
+java:S3776°"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(™¦Åò8¾É§3
+u
+java:S3776Æ"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(İÇÈûÿÿÿÿ8¬¾É§3
+p
+java:S6204ì"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8¬¾É§3
+p
+java:S3776•"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ûïÅë8¬¾É§3
+?	java:S131®""Add a default case to this switch.(œÔ»¢8¬¾É§3
