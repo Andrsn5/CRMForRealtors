@@ -49,7 +49,7 @@ s
 Capp/src/main/java/com/company/crm/dao/inmemory/TaskDaoInMemory.java,d\3\d3a3697b580f2206418015093dca5c5eca1ef8b0
 s
 Capp/src/main/java/com/company/crm/dao/inmemory/DealDaoInMemory.java,9\f\9fe779040f74d4b130cee10cddf1ea070b50fe5e
-‚
+â€š
 Rapp/src/main/java/com/company/crm/dao/inmemory/AdditionalConditionDaoInMemory.java,4\b\4b90e3af2bd8ab67e882dadc5f43695fe71ba071
 t
 Dapp/src/main/java/com/company/crm/dao/inmemory/PhotoDaoInMemory.java,d\1\d102440e0b01dbb6e1f26a4ab59e6308123bf43a
@@ -69,7 +69,7 @@ u
 Eapp/src/main/java/com/company/crm/service/interfaces/TaskService.java,8\d\8d54009a4050486483bd21acd52e9ec8862d7853
 x
 Happ/src/main/java/com/company/crm/service/interfaces/MeetingService.java,0\8\08d2c6aa5a817f914813ac7502a93efe728b61d3
-„
+â€ž
 Tapp/src/main/java/com/company/crm/service/interfaces/AdditionalConditionService.java,0\e\0e48f9393a2eb21d237c91142225b2bfe9ec6735
 w
 Gapp/src/main/java/com/company/crm/service/interfaces/ObjectService.java,1\2\121a84ce76ab0135a3e5154cdcfed2c330e66da6
@@ -83,7 +83,7 @@ z
 Japp/src/main/java/com/company/crm/service/implement/ObjectServiceImpl.java,f\f\ff422bde94d450afe38088c74fd270766b512cbf
 {
 Kapp/src/main/java/com/company/crm/service/implement/MeetingServiceImpl.java,1\2\12b56dfe4282150799aa5c677438205041025297
-‡
+â€¡
 Wapp/src/main/java/com/company/crm/service/implement/AdditionalConditionServiceImpl.java,3\a\3a3bd0a715b3771ef2bacdc1d02e63b97ff40b7a
 y
 Iapp/src/main/java/com/company/crm/service/implement/PhotoServiceImpl.java,f\b\fbc4bcb0903b5b8df8dd6e350a30f9e127f8d39a
@@ -113,6 +113,7 @@ A
 app/src/README.md,e\9\e939a46a1bf870806668e996538bd558bac806a0
 i
 9app/src/main/java/com/company/crm/util/ConsoleHelper.java,d\7\d794c8f9ba9858c562634925040fe2675147d1ab
+
 o
 ?app/src/main/java/com/company/crm/util/ValidationException.java,6\6\66747340996ff7b6d35e45c99842375df0d6430c
 k
@@ -123,10 +124,12 @@ D
 app/build.gradle.kts,d\2\d2a4383452aad84a18429a5844d31330a012a9e6
 n
 >app/src/test/java/com/company/crm/service/DealServiceTest.java,3\a\3af6a13e2fc01b73273913813c53563ec0abe2d4
+
 i
 9app/src/main/java/com/company/crm/dao/TestConnection.java,6\c\6c2b59b98ffe6a9ff4b6f150651ad2da89b135b2
 q
 Aapp/src/main/java/com/company/crm/dao/jdbc/ConnectionFactory.java,3\2\3260514f6b087b885827750f0633a163b3c3c450
+
 I
 gradle/libs.versions.toml,d\7\d7595319a0658be6f1ed500ad590d42e4b28bc4f
 C
@@ -261,7 +264,7 @@ a
 0app/src/main/webapp/WEB-INF/jsp/objects/form.jsp,2\7\2722f39fb665b3cef363b126d029df4f91a9b4d7
 _
 /app/src/main/webapp/WEB-INF/jsp/photos/form.jsp,f\1\f1921482944d9ca9335d677e8755d429f8da8c1d
-ƒ
+Æ’
 Sapp/src/main/java/com/company/crm/web/servlet/admin/AdditionalConditionServlet.java,3\3\3369d81d5746dc68f4e7b0072f003142dd3d6dfd
 x
 Happ/src/main/java/com/company/crm/web/servlet/admin/EmployeeServlet.java,a\8\a84566c7cb85f83354d2e41a53543bb1fa9ed73d

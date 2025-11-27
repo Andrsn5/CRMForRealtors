@@ -43,9 +43,11 @@ public class EmployeeDaoJdbcImpl implements EmployeeDao {
     @Override
     public Employee save(Employee e) {
         String sql = """
+
         INSERT INTO employees(first_name, last_name, email, phone, position, hire_date, is_active, password_hash)
         VALUES (?,?,?,?,?,?,?,?) RETURNING id_employee
         """;
+
         try (Connection c = ConnectionFactory.getConnection();
              PreparedStatement ps = c.prepareStatement(sql)) {
 
@@ -58,6 +60,7 @@ public class EmployeeDaoJdbcImpl implements EmployeeDao {
             ps.setBoolean(7, e.isActive());
             ps.setString(8, e.getPasswordHash()); // Добавляем хеш пароля
 
+
             ResultSet rs = ps.executeQuery();
             if (rs.next()) e.setId(rs.getInt("id_employee"));
             return e;
@@ -69,10 +72,12 @@ public class EmployeeDaoJdbcImpl implements EmployeeDao {
     @Override
     public void update(Employee e) {
         String sql = """
+
         UPDATE employees SET first_name=?, last_name=?, email=?, phone=?, position=?, 
         hire_date=?, is_active=?, password_hash=?
         WHERE id_employee=?
         """;
+
         try (Connection c = ConnectionFactory.getConnection();
              PreparedStatement ps = c.prepareStatement(sql)) {
 
@@ -85,6 +90,7 @@ public class EmployeeDaoJdbcImpl implements EmployeeDao {
             ps.setBoolean(7, e.isActive());
             ps.setString(8, e.getPasswordHash()); // Обновляем хеш пароля
             ps.setInt(9, e.getId());
+
             ps.executeUpdate();
 
         } catch (SQLException ex) {
@@ -106,6 +112,7 @@ public class EmployeeDaoJdbcImpl implements EmployeeDao {
         e.setPasswordHash(rs.getString("password_hash")); // Добавляем пароль
         return e;
     }
+
 
     @Override
     public void delete(int id) {
@@ -136,5 +143,6 @@ public class EmployeeDaoJdbcImpl implements EmployeeDao {
         }
         return Optional.empty();
     }
+
 
 }

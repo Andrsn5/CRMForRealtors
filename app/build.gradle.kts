@@ -35,30 +35,3 @@ dependencies {
     implementation(libs.tomcat.embed.jasper)
 
     implementation(libs.jdt)
-}
-
-// Apply a specific Java toolchain to ease working on different environments.
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
-}
-
-application {
-    // Define the main class for the application.
-    mainClass = "com.company.crm.Main"
-}
-
-tasks.named<Test>("test") {
-    // Use JUnit Platform for unit tests.
-    useJUnitPlatform()
-}
-
-gretty {
-    contextPath = "/"
-    servletContainer = "tomcat10"
-    httpPort = 8080
-    contextPath = "/webapp"
-
-
-}

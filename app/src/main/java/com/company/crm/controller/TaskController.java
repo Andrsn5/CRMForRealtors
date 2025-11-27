@@ -102,6 +102,7 @@ public class TaskController {
                 task.setPriority(priority);
                 task.setStatus(status);
 
+
                 // Валидация даты и времени
                 try {
                     LocalDate date = LocalDate.parse(dueDateStr);
@@ -162,6 +163,7 @@ public class TaskController {
                 } catch (NumberFormatException e) {
                     throw new ValidationException("Invalid Deal ID format. Please enter a valid number.");
                 }
+
 
                 try {
                     if (meetingIdStr != null && !meetingIdStr.trim().isEmpty()) {

@@ -1,12 +1,14 @@
 package com.company.crm.config;
 
+
+
 import com.company.crm.dao.inmemory.*;
 import com.company.crm.dao.jdbc.*;
 import com.company.crm.service.implement.*;
 import com.company.crm.service.interfaces.*;
-import com.company.crm.controller.*;
 
 public class AppConfig {
+
     // DAO instances
     private final EmployeeDaoJdbcImpl employeeDao = new EmployeeDaoJdbcImpl();
     private final ClientDaoJdbcImpl clientDao = new ClientDaoJdbcImpl();
@@ -41,6 +43,7 @@ public class AppConfig {
     private final AdditionalConditionController additionalConditionController;
 
     private final ConsoleApp consoleApp;
+
 
     public AppConfig() {
 
