@@ -1,11 +1,63 @@
 
-G	java:S106'"+Replace this use of System.out by a logger.(¶”‰8™§¥¥3
-L	java:S106("+Replace this use of System.out by a logger.(–•à²ıÿÿÿÿ8¨§¥¥3
-G	java:S1060"+Replace this use of System.out by a logger.(¨²¾å8¨§¥¥3
-L	java:S1068"+Replace this use of System.out by a logger.(Ï¸ááùÿÿÿÿ8¨§¥¥3
-G	java:S106:"+Replace this use of System.out by a logger.(ˆÁÓÅ8¨§¥¥3
-L	java:S106R"+Replace this use of System.out by a logger.(³æÉ…üÿÿÿÿ8¨§¥¥3
-G	java:S106Y"+Replace this use of System.out by a logger.(äúùø8¨§¥¥3
-G	java:S106d"+Replace this use of System.out by a logger.(ÏÆè¿8¨§¥¥3
-G	java:S106e"+Replace this use of System.out by a logger.(†•Ìş8¨§¥¥3
-G	java:S106l"+Replace this use of System.out by a logger.(İ—µÑ8¨§¥¥3
+†
+java:S1192"hDefine a constant instead of duplicating this literal "Please correct the data and try again.
+" 3 times.(ı· 8‚’Èı¥3
+o
+java:S1192‘"QDefine a constant instead of duplicating this literal "Try again? (y/n)" 6 times.(†8‚’Èı¥3
+u
+java:S1192"WDefine a constant instead of duplicating this literal "âŒ Validation error: " 3 times.(Ó¾8‚’Èı¥3
+z	java:S135T"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ8‚’Èı¥3
+{	java:S135£"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ8‚’Èı¥3
+{	java:S135‹"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ8‚’Èı¥3
+W
+java:S1141k"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8‚’Èı¥3
+W
+java:S1141q"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8‚’Èı¥3
+W
+java:S1141y"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8‚’Èı¥3
+X
+java:S1141"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8‚’Èı¥3
+X
+java:S1141Á"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8‚’Èı¥3
+X
+java:S1141Ë"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8‚’Èı¥3
+X
+java:S1141Ù"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8‚’Èı¥3
+X
+java:S1141ç"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8‚’Èı¥3
+G	java:S106$"+Replace this use of System.out by a logger.(ÑŒË‹8ï”Èı¥3
+G	java:S106;"+Replace this use of System.out by a logger.(¶”‰8ğ”Èı¥3
+L	java:S106<"+Replace this use of System.out by a logger.(–•à²ıÿÿÿÿ8ğ”Èı¥3
+G	java:S106D"+Replace this use of System.out by a logger.(¨²¾å8ğ”Èı¥3
+L	java:S106L"+Replace this use of System.out by a logger.(Ï¸ááùÿÿÿÿ8ğ”Èı¥3
+G	java:S106N"+Replace this use of System.out by a logger.(‘àñÒ8ğ”Èı¥3
+G	java:S106O"+Replace this use of System.out by a logger.(ˆÁÓÅ8ğ”Èı¥3
+o
+java:S3776S"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(â–õ8ğ”Èı¥3
+L	java:S106V"+Replace this use of System.out by a logger.(ì–º™ûÿÿÿÿ8ğ”Èı¥3
+H	java:S106Š"+Replace this use of System.out by a logger.(äúùø8ğ”Èı¥3
+H	java:S106"+Replace this use of System.out by a logger.(Ó¾8ğ”Èı¥3
+H	java:S106"+Replace this use of System.out by a logger.(ı· 8ğ”Èı¥3
+H	java:S106–"+Replace this use of System.out by a logger.(øÔÍâ8ğ”Èı¥3
+M	java:S106—"+Replace this use of System.out by a logger.(œ³ä¥üÿÿÿÿ8ğ”Èı¥3
+u
+java:S3776¢"RRefactor this method to reduce its Cognitive Complexity from 54 to the 15 allowed.(çÈ«ğÿÿÿÿÿ8ğ”Èı¥3
+M	java:S106¥"+Replace this use of System.out by a logger.(‘ìİëøÿÿÿÿ8ğ”Èı¥3
+M	java:S106ª"+Replace this use of System.out by a logger.(ø³Ùùÿÿÿÿÿ8ğ”Èı¥3
+H	java:S106´"+Replace this use of System.out by a logger.(¸ÿ¥8ğ”Èı¥3
+H	java:S106ó"+Replace this use of System.out by a logger.(ÏÆè¿8€•Èı¥3
+H	java:S106÷"+Replace this use of System.out by a logger.(Ó¾8€•Èı¥3
+H	java:S106ø"+Replace this use of System.out by a logger.(ı· 8€•Èı¥3
+H	java:S106ÿ"+Replace this use of System.out by a logger.(Ë‚›Ù8€•Èı¥3
+p
+java:S3776Š"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Ëı‘‡8€•Èı¥3
+M	java:S106"+Replace this use of System.out by a logger.(óæ¹òøÿÿÿÿ8€•Èı¥3
+M	java:S106“"+Replace this use of System.out by a logger.(ø³Ùùÿÿÿÿÿ8€•Èı¥3
+H	java:S106"+Replace this use of System.out by a logger.(Šºë¾8€•Èı¥3
+H	java:S106¢"+Replace this use of System.out by a logger.(Œ¢ª‘8€•Èı¥3
+M	java:S106¤"+Replace this use of System.out by a logger.(ùÈşÄşÿÿÿÿ8€•Èı¥3
+H	java:S106©"+Replace this use of System.out by a logger.(Ó¾8€•Èı¥3
+H	java:S106ª"+Replace this use of System.out by a logger.(ı· 8€•Èı¥3
+H	java:S106±"+Replace this use of System.out by a logger.(Ë‚›Ù8€•Èı¥3
+é
+java:S6541¢"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 86 to 64, Complexity from 16 to 14, Nesting Level from 5 to 2, Number of Variables from 16 to 6.(çÈ«ğÿÿÿÿÿ8‡•Èı¥3

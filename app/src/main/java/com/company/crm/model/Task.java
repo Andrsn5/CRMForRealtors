@@ -122,7 +122,7 @@ public class Task {
     }
     @Override
     public String toString() {
-        return String.format("Task{id=%d, title='%s', dueDate=%s, priority='%s', status='%s', responsibleId=%d, clientId=%d, objectId=%d}",
-                id, title, dueDate, priority, status, responsibleId, clientId, objectId);
+        return String.format("Task{id=%d, title='%s', dueDate=%s, priority='%s', status='%s', responsibleId=%d, clientId=%d, objectId=%d, id_condition=%d, id_deal=%d, id_meeting=%d,}",
+                id, title, dueDate, priority, status, responsibleId, clientId, objectId , conditionId, dealId, meetingId);
     }
 }

@@ -1,0 +1,19 @@
+
+}
+java:S1192Ö"_Define a constant instead of duplicating this literal " is already used in task (ID: " 6 times.(ÿ™Ï¨8ßóÁĞ§3
+L
+java:S2201{"/The return value of "orElseThrow" must be used.(Ø•Ÿ8°ôÁĞ§3
+R
+java:S2201"/The return value of "orElseThrow" must be used.(û×¸•şÿÿÿÿ8°ôÁĞ§3
+M
+java:S2201‡"/The return value of "orElseThrow" must be used.(À²ˆÓ8°ôÁĞ§3
+R
+java:S2201"/The return value of "orElseThrow" must be used.(ìÊªüÿÿÿÿ8°ôÁĞ§3
+M
+java:S2201“"/The return value of "orElseThrow" must be used.(É›Í8°ôÁĞ§3
+M
+java:S2201™"/The return value of "orElseThrow" must be used.(Ş„–ç8°ôÁĞ§3
+L
+java:S2201Ÿ"/The return value of "orElseThrow" must be used.(¡°Û8°ôÁĞ§3
+p
+java:S6204Ê"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8ÀôÁĞ§3

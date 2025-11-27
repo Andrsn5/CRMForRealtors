@@ -1,0 +1,11 @@
+
+M
+java:S1948"0Make "meetingService" transient or serializable.(“ø¼à8í­¸Æ§3
+L
+java:S1948"/Make "clientService" transient or serializable.(’†˜É8í­¸Æ§3
+G	java:S106 "+Replace this use of System.out by a logger.(¹“Ÿù8í­¸Æ§3
+L	java:S1065"+Replace this use of System.err by a logger.(‡ïèôúÿÿÿÿ8í­¸Æ§3
+•
+java:S1130H"yRemove the declaration of thrown exception 'jakarta.servlet.ServletException', as it cannot be thrown from method's body.(ıù±8õ­¼Æ§3
+G	java:S106]"+Replace this use of System.out by a logger.(üøÅÖ8€®¸Æ§3
+G	java:S106h"+Replace this use of System.err by a logger.(Ò”ŒÍ8®¸Æ§3
